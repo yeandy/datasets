@@ -79,9 +79,8 @@ def _load_sentence_tokenizer():
   """Returns a sentence tokenization function."""
   nltk = tfds.core.lazy_imports.nltk
   # Lock to avoid a race-condition in the creation of the download directory.
-  with _nltk_lock:
-    nltk.download("punkt")
-    return nltk.data.load("nltk:tokenizers/punkt/english.pickle")
+  nltk.download("punkt")
+  return nltk.data.load("nltk:tokenizers/punkt/english.pickle")
 
 
 
